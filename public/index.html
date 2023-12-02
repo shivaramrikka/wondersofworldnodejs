@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+    <style>
+        html,body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #222;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+}
+.main-container {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-areas: 
+     "navbar navbar navbar navbar"
+     "about about about about"
+     "contact contact contact contact"
+     "projects projects education education"
+     "experiences experiences education education"
+     "experiences experiences certifications certifications"
+     "experiences experiences certifications certifications"
+     "blogs blogs blogs blogs"
+     "footer footer footer footer"
+     ;
+}
+#navbar {
+    grid-area: navbar;
+    margin-top: 10px !important;
+}
+#about {
+    grid-area: about;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+#contact {
+    grid-area: contact;
+    margin-bottom: 5px !important;
+}
+#projects {
+    grid-area: projects;
+    margin-left: 10px !important;
+}
+#education {
+    grid-area: education;
+    margin-right: 10px !important;
+}
+#experiences {
+    grid-area: experiences;
+    margin-left: 10px !important;
+}
+#certifications {
+    grid-area: certifications;
+    margin-right: 10px !important;
+}
+#blogs {
+    grid-area: blogs;
+    margin: 5px 10px 0 10px;
+    padding: 15px;
+    background-color: #3b4446;
+    color: #fff;
+    border-radius: 10px;
+}
+#footer {
+    grid-area: footer;
+    margin: 10px;
+    padding: 15px;
+    background-color: #3b4446;
+    border-radius: 10px;
+}
+#navbar, #about, #contact {
+    margin: 0 10px;
+}
+#projects, #education, #experiences, #certifications {
+    background-color: #3b4446;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 5px;
+    
+}
+#navbar, #about, #contact, #projects,#blogs, #education, #experiences, #certifications, #footer{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(190,107,107,1) 50%, rgba(252,176,69,1) 100%);
+}
+.header {
+    margin-bottom: 10px;
+    background-color: #FF5A36;
+    border-radius: 10px;
+    padding: 15px 0px;
+}
+#navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-item a{
+    padding: 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.nav-item:hover, .nav-item a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.fa{
+    padding-right: 5px;
+}
+.description{
+    text-align: center;
+    font-family: monospace;
+    color: #fff;
+}
+h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+.img-container{
+    text-align: center;
+}
+.img-container img{
+    border: 3px solid #fff;
+}
+
+.contact-links ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-links ul li a {
+    font-size: 14px;
+}
+.contact-links ul li {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    padding-right: 5px;
+}
+
+.sub-heading {
+    text-align: center;
+    background-color: #fff;
+    padding: 6px 10px;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    color: #000;
+
+}
+.desc {
+    line-height: 32px;
+}
+.edu-details-section, .certifications-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;    
+}
+.fa-graduation-cap{
+    font-size: 50px;
+    color: #fff;
+}
+.edu-details-info, .certifications-info {
+    padding: 0 20px;
+    text-align: center;
+    min-width: 240px;
+    max-width: 240px;
+    border: 2px solid #fff;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .topnav a:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .topnav .icon {
+    display: none;
+    color: #fff;
+  }
+
+
+
+@media screen and (max-width: 500px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "navbar"
+        "about"
+        "contact"
+        "education"
+        "experiences"
+        "projects"
+        "certifications"
+        "blogs"
+        "footer";
+    }
+    .edu-details-info, .certifications-info {
+        min-width: 240px !important;
+    }
+    #about{
+        flex-direction: column-reverse;
+    }
+    .contact-links ul {
+        flex-direction: column;
+    }
+    .contact-links ul li {
+        margin: 10px 0;
+        height: unset;
+    }
+    .contact-links ul li a {
+        width: 100%;
+        text-align: center;
+    }
+    #projects, #education, #experiences, #certifications{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .edu-details-info, .certifications-info {
+        min-width: unset;
+    }
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .topnav.responsive {
+        position: relative;
+        flex-direction: column;
+    }
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    #navbar ul{
+        flex-direction: column;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="topnav" id="navbar">
+            <a class="nav-link" href="#about">ABOUT</a>
+            <a class="nav-link" href="#education">EDUCATION</a>
+            <a class="nav-link" href="#experiences">EXPERIENCE</a>
+            <a class="nav-link" href="#projects">PROJECTS</a>
+            <a class="nav-link" href="#blogs">BLOGS</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            </ul>
+        </nav>
+        <section id="about">
+            <div class="description">
+                <h1>RIKKA SHIVA RAM REDDY</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, aliquid!</p>
+            </div>
+            <div class="img-container">
+                <img width="200" height="200" src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png"
+                    alt="person img">
+            </div>
+        </section>
+        <section class="contact-links" id="contact">
+
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-map-marker"></i> 66 Avenue State
+                        Australia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-phone"></i> +(999) 999 9999</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
+                        abc@gmail.com</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>
+                        www.domainwhere.com</a></li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h3 class="sub-heading">PROJECTS</h3>
+            <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus recusandae at soluta
+                saepe culpa aliquid, praesentium doloribus. Architecto animi recusandae debitis dignissimos facere quo
+                adipisci, harum odit sit, natus ducimus!</p>
+        </section>
+        <section id="experiences">
+            <h3 class="sub-heading">EXPERIENCES</h3>
+            <div class="exp-container">
+                <div>
+                    <h4>Company 1</h4>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolorum modi hic
+                        officiis voluptate dolor? Voluptatem at, porro, ex sapiente deserunt possimus minus totam
+                        quisquam sint consequatur reiciendis nesciunt ratione!</p>
+                </div>
+                <div>
+                    <h4>Company 2</h4>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eum asperiores
+                        pariatur reprehenderit alias, expedita sit ipsa excepturi perferendis. Placeat deserunt
+                        inventore ipsam rerum aut ullam commodi nemo totam delectus?</p>
+                </div>
+                <div>
+                    <h4>Company 3</h4>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eum asperiores
+                        pariatur reprehenderit alias, expedita sit ipsa excepturi perferendis. Placeat deserunt
+                        inventore ipsam rerum aut ullam commodi nemo totam delectus?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h3 class="sub-heading">EDUCATION</h3>
+            <div class="edu-details-section">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <div class="edu-details-info">
+                    <p>Master's in Computer Science</p>
+                    <p>University Name</p>
+                    <p>2021 - 2023</p>
+                </div>
+            </div>
+            <div class="edu-details-section">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <div class="edu-details-info">
+                    <p>Bachelor's in Computer Science</p>
+                    <p>University Name</p>
+                    <p>2013 - 2017</p>
+                </div>
+            </div>
+        </section>
+        <section id="certifications">
+            <h3 class="sub-heading">CERTIFICATIONS</h3>
+            <div class="certifications-section">
+                <img width="50" height="50" src="https://cdn-icons-png.flaticon.com/512/2110/2110357.png"
+                    alt="cap image">
+                <div class="certifications-info">
+                    <p>Certificate for Computer Skills For the Office.</p>
+                </div>
+            </div>
+            <div class="certifications-section">
+                <img width="50" height="50" src="https://cdn-icons-png.flaticon.com/512/2110/2110357.png"
+                    alt="cap image">
+                <div class="certifications-info">
+                    <p>Oracle Database 19C Admin</p>
+                </div>
+            </div>
+            <div class="certifications-section">
+                <img width="50" height="50" src="https://cdn-icons-png.flaticon.com/512/2110/2110357.png"
+                    alt="cap image">
+                <div class="certifications-info">
+                    <p>Oracle Database Rman</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogs">
+            <h3 class="sub-heading">BLOGS</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta hic sint mollitia ducimus,
+                iusto magnam perferendis voluptatum dolorem, possimus error veniam iure. Tenetur, exercitationem nobis
+                vitae dolorem, fuga sequi nihil doloremque inventore itaque in enim asperiores unde suscipit magni id.
+            </p>
+        </section>
+        <footer id="footer">
+            <section class="social-media-links">
+                <h3 class="sub-heading">SOCIAL MEDIA PROFILES</h3>
+                <section class="contact-links">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.linkedin.com"><img
+                                    width="10" height="10" class="icon"
+                                    src="https://cdn-icons-png.flaticon.com/256/174/174857.png" /> www.linkedin.com</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.facebook.com"><img
+                                    width="10" height="10" class="icon"
+                                    src="https://cdn-icons-png.flaticon.com/512/1312/1312139.png" />
+                                www.facebook.com</a></li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.github.com"><img
+                                    width="10" height="10" class="icon"
+                                    src="https://cdn-icons-png.flaticon.com/512/2175/2175377.png" /> www.github.com</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.twitter.com"><img
+                                    width="10" height="10" class="icon"
+                                    src="https://cdn-icons-png.flaticon.com/256/124/124021.png" /> www.twitter.com</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.instagram.com"><img
+                                    width="10" height="10" class="icon"
+                                    src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" />
+                                www.instagram.com</a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navbar");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
